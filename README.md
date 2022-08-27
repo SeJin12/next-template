@@ -3,7 +3,7 @@
 
 ## stack
 - axios
-- swr
+- swr (stale-while-revalidate)
 
 ## structure
 - lib [ http, database ]
