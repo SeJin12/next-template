@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import useSWR from "swr";
-import { fetcherGet } from "../lib/http";
+import { fetcherGet } from "@lib/http";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
