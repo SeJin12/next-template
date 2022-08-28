@@ -3,7 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["lib/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@components/*": ["pages/components/*"],
+      "@ui/*": ["pages/ui/*"]
     }
   }
 }
