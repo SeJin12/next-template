@@ -7,7 +7,7 @@
 
 ## structure
 - lib [ http, database ]
-- pages [ api, components, containers, frame ]
+- pages [ api, components, containers, frame, ui ]
 - public (resource)
 - utils
 - hooks

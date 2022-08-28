@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const contents = [{ href: "/", text: "Home" }];
+const contents = [{ href: "/", text: "Home" }, {href: "/components/BasicReducer", text:"Reducer"}];
 
 const Nav = () => {
   return (
@@ -22,8 +22,15 @@ const Nav = () => {
           div {
             display: flex;
           }
+          ul {
+            column-count: 2;
+          }
           li {
             list-style: none;
+            text-align: center;
+          }
+          a {
+            text-decoration: none;
           }
         `}
       </style>
