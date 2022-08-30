@@ -15,7 +15,7 @@ export default function handler(req, res) {
   
   defaultGet(url, {})
     .then((response) => {
-      res.status(200).json(response.data.results);
+      res.status(200).json(response.data);
     })
     .catch(({ err }) => {
       res.status(500).json({ err });
