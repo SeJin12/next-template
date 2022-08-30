@@ -1,16 +1,23 @@
 import Link from "next/link";
+import { Badge } from "react-bootstrap";
 
-const contents = [{ href: "/", text: "Home" }, {href: "/components/BasicReducer", text:"Reducer"}];
+const contents = [
+  { href: "/", text: "Home" },
+  { href: "/components/BasicReducer", text: "Reducer" },
+  { href: "/components/BasicReducer", text: "Foo" },
+];
 
-const Nav = () => {
+const Navigation = () => {
   return (
     <div className="container">
       <ul>
         {contents.map((content) => (
           <li key={content.text}>
-            <Link href={content.href}>
-              <a>{content.text}</a>
-            </Link>
+            <Badge className="bg-white ">
+              <Link href={content.href}>
+                <a>{content.text}</a>
+              </Link>{" "}
+            </Badge>
           </li>
         ))}
       </ul>
@@ -18,12 +25,13 @@ const Nav = () => {
         {`
           .container {
             justify-content: center;
+            background-color: white;
           }
           div {
             display: flex;
           }
           ul {
-            column-count: 2;
+            column-count: 3;
           }
           li {
             list-style: none;
@@ -31,6 +39,7 @@ const Nav = () => {
           }
           a {
             text-decoration: none;
+            font-size: 1rem;
           }
         `}
       </style>
@@ -38,4 +47,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navigation;

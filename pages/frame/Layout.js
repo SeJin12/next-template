@@ -1,11 +1,11 @@
 import Header from "./Header";
-import Nav from "./Nav";
+import Navigation from "./Navigation";
 
 const Layout = (props) => {
   return (
     <div>
       <Header />
-      <Nav />
+      <Navigation />
       <div>{props.children}</div>
     </div>
   );
