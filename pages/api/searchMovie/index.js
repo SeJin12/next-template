@@ -10,6 +10,7 @@ import { defaultGet, fetcherParamGet } from "@lib/http";
 export default function handler(req, res) {
   const url = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.MOVIE_API_KEY}&language=en-US&page=1`;
   console.log(req.method, req.query);
+  console.log(req.body, req.headers);
   defaultGet(url, {})
     .then((response) => {
       res.status(200).json(response.data.results);

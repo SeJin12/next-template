@@ -4,7 +4,7 @@ import { Badge } from "react-bootstrap";
 const contents = [
   { href: "/", text: "Home" },
   { href: "/components/BasicReducer", text: "Reducer" },
-  { href: "/components/BasicReducer", text: "Foo" },
+  { href: "/components/Foo", text: "Foo" },
 ];
 
 const Navigation = () => {
