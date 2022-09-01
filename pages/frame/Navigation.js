@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Badge } from "react-bootstrap";
+import { Badge, Container, Nav, Navbar } from "react-bootstrap";
 
 const contents = [
   { href: "/", text: "Home" },
@@ -9,41 +9,28 @@ const contents = [
 
 const Navigation = () => {
   return (
-    <div className="container">
-      <ul>
-        {contents.map((content) => (
-          <li key={content.text}>
-            <Badge className="bg-white ">
-              <Link href={content.href}>
-                <a>{content.text}</a>
-              </Link>{" "}
-            </Badge>
-          </li>
-        ))}
-      </ul>
-      <style jsx>
-        {`
-          .container {
-            justify-content: center;
-            background-color: white;
-          }
+      <Navbar bg="dark" variant="dark" sticky="top">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            {contents.map((content) => (
+              // <Nav.Link key={content.href} href={content.href}>{content.text}</Nav.Link>
+              <div key={content.href}>
+                <Link href={content.href}><span>{content.text}</span></Link>
+              </div>
+            ))}
+          </Nav>
+        </Container>
+        <style jsx>{`
           div {
-            display: flex;
+            margin-left: 50px;
           }
-          ul {
-            column-count: 3;
+          div span {
+            color: white;
           }
-          li {
-            list-style: none;
-            text-align: center;
-          }
-          a {
-            text-decoration: none;
-            font-size: 1rem;
-          }
-        `}
-      </style>
-    </div>
+          `}
+        </style>
+      </Navbar>
   );
 };
 

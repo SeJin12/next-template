@@ -5,7 +5,7 @@
  */
 export function isFalsy(obj) {
     let ret = false;
-    console.log(obj, typeof obj);
+
     switch(obj) {
         case false:
         case null:
@@ -17,7 +17,8 @@ export function isFalsy(obj) {
         case Infinity:
             ret = true;
     }
-    if(isNaN(obj))
+    if( typeof obj !==  'object' &&  isNaN(obj))
         ret = true;
+
     return ret;
 }

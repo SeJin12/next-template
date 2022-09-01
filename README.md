@@ -5,6 +5,7 @@
 - axios
 - swr (stale-while-revalidate)
 - react-bootstrap
+- lodash
 
 ## structure
 - lib [ http, database ]
