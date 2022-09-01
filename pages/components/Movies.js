@@ -1,6 +1,8 @@
 import { fetcherGet } from "@lib/http";
 import MoiveCard from "@ui/MoiveCard";
+import { isFalsy } from "@utils/util";
 import React, { useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 import useSWR from "swr";
 
 const Movies = ({ page }) => {
@@ -10,10 +12,18 @@ const Movies = ({ page }) => {
   );
 
   if (error) return <div> {error.toString()} Error..!</div>;
-  if (!data) return <div>Loading...</div>;
+  if (isFalsy(data)) {
+    return (
+      <div style={{ width: "100%", justifyContent: "center" }}>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
+  }
 
   return (
-    <div>
+    <div style={{ dispay: "flex" }}>
       <button
         onClick={() => {
           console.log(data);
@@ -22,19 +32,21 @@ const Movies = ({ page }) => {
       >
         호출(SWR mutate) 그리고 현재 데이터 확인
       </button>
-      <ul>
-        {data &&
-          data.results.map((d) => (
-            <li key={d.id}>
-              <MoiveCard
-                title={d.title}
-                overview={d.overview}
-                poster_path={d.poster_path}
-                release_date={d.release_date}
-              />
-            </li>
-          ))}
-      </ul>
+      <div>
+        <ul>
+          {data &&
+            data.results.map((d) => (
+              <li key={d.id}>
+                <MoiveCard
+                  title={d.title}
+                  overview={d.overview}
+                  poster_path={d.poster_path}
+                  release_date={d.release_date}
+                />
+              </li>
+            ))}
+        </ul>
+      </div>
       <style jsx>
         {`
           ul {

@@ -12,16 +12,6 @@ const Foo = () => {
         console.log(data);
     }
 
-    // useEffect(() => {
-    //     const data = {a:1};
-    //     const results = axios.post('/api/searchMovie', {data}, {
-    //         headers: {
-    //         'Content-Type': 'application/json'
-    //         }
-    //       }
-    //     )
-    // }, [])
-
     return (
         <div>
             <button onClick={() => console.log(data)}>btn</button>
