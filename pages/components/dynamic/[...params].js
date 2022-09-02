@@ -1,18 +1,21 @@
 import { useRouter } from "next/router";
+import Header from "pages/frame/Header";
 
 export default function Data({ params }) {
   const router = useRouter();
-  const [title] = params || [];
+  const [id, title] = params || [];
 
-  // console.log("index: ", router);
-  // console.log("params: ", params);
-  // console.log("router.query: ", router.query);
-  // console.log(router.query.params);
   return (
     <div>
-      title: {title}
+      <Header title={title} />
+      routerid: {id}
+      <br></br>
+      LinkId: {id}
       <hr />
-      id: {router.query.id}
+      routerTitle: {router.query.title}
+      <br></br>
+      LinkTitle: {title}
+      <hr />
     </div>
   );
 }
