@@ -5,6 +5,7 @@ const contents = [
   { href: "/", text: "Home" },
   { href: "/components/BasicReducer", text: "Reducer" },
   { href: "/components/Foo", text: "Foo" },
+  { href: "/components/RouterPush", text: "Router" }
 ];
 
 const Navigation = () => {

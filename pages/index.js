@@ -1,5 +1,5 @@
-import { useState } from "react";
 import Movies from "@components/Movies";
+import { useState } from "react";
 
 export default function Home() {
   const [pageIndex, setPageIndex] = useState(1);
