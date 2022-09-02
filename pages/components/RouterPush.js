@@ -8,7 +8,15 @@ const RouterPush = () => {
 
   const router = useRouter();
   const onClick = (title, id) => {
-    router.push(`/components/dynamic/${title}/${id}`);
+    router.push(
+      {
+        pathname: `/components/dynamic/${title}`,
+        query: {
+          id: id,
+        },
+      },
+      `/components/dynamic/${title}`
+    );
   };
 
   return (
