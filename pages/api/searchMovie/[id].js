@@ -19,7 +19,10 @@ export default function handler(req, res) {
         res.status(500).json({ err });
       });
   } else if (req.method == "POST") {
+    //
   } else if (req.method == "PUT") {
+    //
   } else if (req.method == "DELETE") {
+    //
   }
 }
