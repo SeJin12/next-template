@@ -1,20 +1,20 @@
 import React, { useReducer, useState } from "react";
 
 const ACTION_TYPES = {
-    deposit: 'deposit',
-    withdraw: 'withdraw'
-}
+  deposit: "deposit",
+  withdraw: "withdraw",
+};
 
 const reducer = (state, action) => {
   console.log("reducer가 일을 합니다!", state, action);
-    switch (action.type) {
-        case ACTION_TYPES.deposit:
-            return state + action.payload;
-        case ACTION_TYPES.withdraw:
-            return state - action.payload;
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case ACTION_TYPES.deposit:
+      return state + action.payload;
+    case ACTION_TYPES.withdraw:
+      return state - action.payload;
+    default:
+      return state;
+  }
 };
 
 const BasicReducer = () => {
@@ -28,7 +28,7 @@ const BasicReducer = () => {
       <input
         type="number"
         value={number}
-        onChange={(e) => setNumber(parseInt(e.target.value))}
+        onChange={e => setNumber(parseInt(e.target.value))}
         step="1000"
       />
       <button

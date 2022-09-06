@@ -35,7 +35,7 @@ const Movies = ({ page }) => {
       <div>
         <ul>
           {data &&
-            data.results.map((d) => (
+            data.results.map(d => (
               <li key={d.id}>
                 <MoiveCard
                   title={d.title}
