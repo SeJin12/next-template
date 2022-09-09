@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { defaultGet, fetcherParamGet } from "@lib/http";
+import { defaultGet } from "@lib/http";
 
 /**
  * @example

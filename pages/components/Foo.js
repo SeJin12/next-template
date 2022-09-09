@@ -1,11 +1,11 @@
-import axios from "axios";
 import useSWR from "swr";
+import { fetcherPost } from "@lib/http";
 
-const fetcher = (url, params, options) =>
-  axios.post(url, params, options).then((res) => res);
+// const fetcher = (url, params, options) =>
+//   axios.post(url, params, options).then((res) => res);
 
 const Foo = () => {
-  const { data } = useSWR(["/api/searchMovie", { a: 1 }], fetcher);
+  const { data } = useSWR(["/api/searchMovie", { a: 1 }], fetcherPost);
 
 
   if (data) {

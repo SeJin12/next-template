@@ -23,7 +23,7 @@ const Movies = ({ page }) => {
   }
 
   return (
-    <div style={{ dispay: "flex" }}>
+    <div>
       <button
         onClick={() => {
           console.log(data);
