@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Badge, Container, Nav, Navbar } from "react-bootstrap";
 
@@ -12,7 +13,7 @@ const Navigation = () => {
   return (
       <Navbar bg="dark" variant="dark" sticky="top">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home"><Image src="/vercel.svg" width="50px" height="10px" alt="logo"/></Navbar.Brand>
           <Nav className="me-auto">
             {contents.map((content) => (
               // <Nav.Link key={content.href} href={content.href}>{content.text}</Nav.Link>

@@ -28,4 +28,7 @@ useRouter push 할 때, handler(api routers)를 호출하면 안됨. 그리고 h
 
 ## VSCode Extensions
 - GitLens
+- Auto Rename Tag
+- HTML CSS Support
+- CSS Peek
 >>>>>>> Stashed changes

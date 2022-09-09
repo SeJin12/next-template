@@ -5,6 +5,8 @@ export default function Data({ params }) {
   const router = useRouter();
   const [id, title] = params || [];
 
+  console.log(router);
+
   return (
     <div>
       <Header title={title} />

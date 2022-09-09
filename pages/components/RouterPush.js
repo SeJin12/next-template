@@ -1,11 +1,15 @@
+import { useInput } from "hooks/useInput";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const RouterPush = () => {
   const title = useRef("");
   const id = useRef(0);
+
+  const id2 = useInput(0);
+  const title2 = useInput('');
 
   const router = useRouter();
   const onClick = (id, title) => {
@@ -19,15 +23,15 @@ const RouterPush = () => {
       `/components/dynamic/${id}` // masking URL
     );
   };
-
+  
   return (
     <div>
       <Form.Label htmlFor="basic-url">Try useRouter</Form.Label>
 
       <InputGroup className="mb-3">
         <InputGroup.Text>ID</InputGroup.Text>
-        <Form.Control aria-label="Amount (to the nearest dollar)" ref={id} />
-        <InputGroup.Text>.00</InputGroup.Text>
+        <Form.Control aria-label="Amount (to the nearest dollar)" ref={id}
+        />
       </InputGroup>
       <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon3">TITLE</InputGroup.Text>
@@ -43,7 +47,11 @@ const RouterPush = () => {
       >
         Router Push
       </Button>
-      <Link href={`/components/dynamic/123/asd`}>Link</Link>
+      <br></br>
+      <input  {...id2}/> <br/>
+      <input  onChange={title2.onChange}/> <br/>
+      <Link href={`/components/dynamic/${id2.value}/${title2.value}`}>Link</Link>
+      <button onClick={() => console.log(id2, title2)}>console</button>
     </div>
   );
 };
